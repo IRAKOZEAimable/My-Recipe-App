@@ -12,7 +12,7 @@ export interface User {
     password: string;
 }
 
-export type recipeCategory = |"All" |"Breakfast" | "Dinner" |"Snack";
+export type recipeCategory = |"All" |"Breakfast" |"Dinner" |"Snack";
 
 export type NewRecipe = Omit<Recipe, "id">;
 
