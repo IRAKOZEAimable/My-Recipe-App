@@ -14,3 +14,5 @@ export interface User {
 
 export type recipeCategory = |"All" |"Breakfast" | "Dinner" |"Snack";
 
+export type NewRecipe = Omit<Recipe, "id">;
+
