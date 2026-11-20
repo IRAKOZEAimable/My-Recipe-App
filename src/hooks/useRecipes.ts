@@ -29,9 +29,30 @@ const useRecipes = () => {
                 setIsLoading(false);
             }
         }
-        
+
         loadRecipes();
 
     }, [])
 
+    // 5. Add new recipe
+    const addRecipe = (newRecipe: NewRecipe) => {
+        const recipeWithId: Recipe = {
+            ...newRecipe,
+            id: Date.now(),
+        };
+
+        setRecipes((previousRecipes) => [
+            ...previousRecipes,
+            recipeWithId,
+        ]);
+    }; 
+
+     // 6. Return everything needed by components
+     return {recipes, isLoading, error, addRecipe};
 }
+
+export default useRecipes;
+
+   
+
+    
