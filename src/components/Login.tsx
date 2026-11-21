@@ -33,4 +33,76 @@ const Login = ({onLoginSuccess}: LoginProps) => {
             }
     };
 
-}
+    return (
+        <div>
+            <div>
+
+                {/* Logo and Heading */}
+
+                <div>
+                    <div>
+
+                        🥗
+
+                    </div>
+
+                    <h1>Recipe Planner</h1>
+                    <p>Sign in to manage your daily meals</p>
+                </div>
+
+                {/* Login Form */}
+
+                <form onSubmit={handleSubmit}>
+
+                    {/* Email */}
+                    <div>
+                        <label htmlFor="email">
+                        Email Address
+                        </label>
+                        <input 
+                            id="email"
+                            type="email"
+                            value={email}
+                            onChange={(event) => setEmail(event.target.value)}
+                            placeholder="Enter your email"
+                            required
+                        />
+
+                    </div>
+
+                    {/* Password */}
+                    <div>
+                        <label htmlFor="password">
+                            Password
+                        </label>
+                        <input 
+                            id="password"
+                            type="password"
+                            value={password}
+                            onChange={(event) => setPassword(event.target.value)}
+                            placeholder="Enter your password"
+                            required
+                        />
+                    </div>
+
+                    {/* Error message */}
+
+                    {error && (
+                        <p>{error}</p>
+                    )}
+
+                    {/* Submit button */}
+
+                    <button type="submit">
+                        Sign In
+                    </button>
+                </form>
+
+                <p>Recipe Planner Dashboard</p>
+            </div>
+        </div>
+    );
+
+};
+
+export default Login;
